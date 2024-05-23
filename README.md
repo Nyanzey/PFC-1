@@ -15,3 +15,12 @@ sudo docker run --gpus=all -it -v $(pwd):/app python-3.9-env
 bash scripts/test.sh ./cfg/coco.yml
 ```
 El primer comando inicializa en entorno de Docker y el segundo se utiliza para realizar la evaluación de los modelos en las métricas de FID y CLIP. Este proceso duró alrededor de 40 minutos usando una tarjeta gráfica NVIDIA RTX 3090.
+
+Para la ejecución del modelo de GLIGEN se tienen los siguientes comandos para poder la generación de imágenes, en este caso, usando cajas delimitadoras como configuración espacial:
+```
+sudo docker run --gpus=all -it --rm -v /mnt/e/Gligen:/workspace/glig my_pytorch_env /bin/bash
+```
+```
+python gligen_inference.py
+```
+El primer comando, de manera similar como en para GALIP, configura el entorno de Docker basado en el Dockerfile respectivo en este repositorio. El segundo comando ejecuta el programa de python destinado a la inferencia (generación) de imágenes. Se uso la misma tarjeta gráfica como en el primer modelo, tomando alrededor de 3 minutos para la ejecución.
