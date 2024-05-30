@@ -24,3 +24,30 @@ sudo docker run --gpus=all -it --rm -v /mnt/e/Gligen:/workspace/glig my_pytorch_
 python gligen_inference.py
 ```
 El primer comando, de manera similar como en para GALIP, configura el entorno de Docker basado en el Dockerfile respectivo en este repositorio. El segundo comando ejecuta el programa de python destinado a la inferencia (generación) de imágenes. Se uso la misma tarjeta gráfica como en el primer modelo, tomando alrededor de 3 minutos para la ejecución.
+
+### Procesamiento de datos
+
+Para el procesmiento de los datos se implementaron los scripts en python y shell encontrados en la carpeta de Evaluation. Las funciones de cada scripts son explicadas a continuación:
+
+- **process_data.py**: Este es el script principal del procesamiento. La primera función de este script es la modificación del tamaño de las imágenes para que estén acorde a la resolución del conjunto de datos de evaluación. La segunda en es balance del número de elementos en cada uno de los conjuntos de datos a ser evaluados para que la evaluación sea más consistente y significativa.
+
+- **evaluate.sh**: Este script simplemente es usado para configurar los argumentos para el procesamiento de datos para posteriormente ser ejecutado.
+
+- **clearfolders.sh**: Script usado para limpiar el contenido de los directorios de los conjuntos de datos generados.
+
+- **utils.py**: Script usado para un preprocesamiento y separación de las imágenes generadas por el modelo GALIP, ya que la tiene una generación múltiple en una sola imagen.
+
+### Métrica de evaluación (FID)
+
+La métrica de Distancia de Incepción de Fréchet (FID) se utiliza para evaluar la calidad de las imágenes generadas por modelos como las Redes Generativas Antagónicas (GANs). Compara cuán similares son las imágenes generadas a las imágenes reales.
+
+#### Implementación en PyTorch
+
+PyTorch cuenta con una implementación para esta métrica, la cual será usada para los experimentos. Aquí se encuentra el repositorio de dicha implementación:
+
+- **Repositorio**: [pytorch-fid](https://github.com/mseitzer/pytorch-fid)
+- **Instalación**:
+
+```sh
+  pip install pytorch-fid
+```
