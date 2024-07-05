@@ -12,7 +12,7 @@ Para la evaluación de los modelos pre-entrenados presentados en el repositorio 
 sudo docker run --gpus=all -it -v $(pwd):/app your-env
 ```
 ```
-bash scripts/test.sh ./cfg/coco.yml
+python generate.py
 ```
 El primer comando inicializa en entorno de Docker y el segundo se utiliza para realizar la evaluación de los modelos en las métricas de FID y CLIP. Este proceso duró alrededor de 40 minutos usando una tarjeta gráfica NVIDIA RTX 3090.
 
