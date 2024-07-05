@@ -9,7 +9,7 @@ Para poder configurar el entorno para la ejecución y prueba de los modelos se u
 ### Consideraciones para la ejecución
 Para la evaluación de los modelos pre-entrenados presentados en el repositorio original de GALIP, se deben ejecutar los siguientes comandos una vez construida la imagen de Doker:
 ```
-sudo docker run --gpus=all -it -v $(pwd):/app python-3.9-env
+sudo docker run --gpus=all -it -v $(pwd):/app your-env
 ```
 ```
 bash scripts/test.sh ./cfg/coco.yml
@@ -18,7 +18,7 @@ El primer comando inicializa en entorno de Docker y el segundo se utiliza para r
 
 Para la ejecución del modelo de GLIGEN se tienen los siguientes comandos para poder la generación de imágenes, en este caso, usando cajas delimitadoras como configuración espacial:
 ```
-sudo docker run --gpus=all -it --rm -v /mnt/e/Gligen:/workspace/glig my_pytorch_env /bin/bash
+sudo docker run --gpus=all -it --rm -v /mnt/e/Gligen:/workspace/glig your-env /bin/bash
 ```
 ```
 python gligen_inference.py
