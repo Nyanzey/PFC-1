@@ -35,8 +35,6 @@ Para el procesmiento de los datos se implementaron los scripts en python y shell
 
 - **clearfolders.sh**: Script usado para limpiar el contenido de los directorios de los conjuntos de datos generados.
 
-- **utils.py**: Script usado para un preprocesamiento y separación de las imágenes generadas por el modelo GALIP, ya que la tiene una generación múltiple en una sola imagen.
-
 ### Métrica de evaluación (FID)
 
 La métrica de Distancia de Incepción de Fréchet (FID) se utiliza para evaluar la calidad de las imágenes generadas por modelos como las Redes Generativas Antagónicas (GANs). Compara cuán similares son las imágenes generadas a las imágenes reales.
