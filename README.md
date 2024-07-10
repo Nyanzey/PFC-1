@@ -12,9 +12,9 @@ Para la evaluación de los modelos pre-entrenados presentados en el repositorio 
 sudo docker run --gpus=all -it -v $(pwd):/app your-env
 ```
 ```
-python generate.py
+python generate.py "A dog next to a tree"
 ```
-El primer comando inicializa en entorno de Docker y el segundo se utiliza para generar imágenes.
+El primer comando inicializa en entorno de Docker y el segundo se utiliza para generar imágenes basadas en una descripción de texto como argumento.
 
 Para la ejecución del modelo de GLIGEN se tienen los siguientes comandos para poder la generación de imágenes, en este caso, usando cajas delimitadoras como configuración espacial:
 ```
