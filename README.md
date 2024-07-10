@@ -12,18 +12,18 @@ Para la evaluación de los modelos pre-entrenados presentados en el repositorio 
 sudo docker run --gpus=all -it -v $(pwd):/app your-env
 ```
 ```
-python generate.py "A dog next to a tree"
+python3 generate.py "A dog next to a tree"
 ```
-El primer comando inicializa en entorno de Docker y el segundo se utiliza para generar imágenes basadas en una descripción de texto como argumento.
+El primer comando inicializa en entorno de Docker y el segundo se utiliza para generar imágenes basadas en una descripción de texto como argumento. Cada imagen generata tomó aproximadamente 12 segundos utilizando una tarjeta gráfica NVIDIA RTX 3090.
 
 Para la ejecución del modelo de GLIGEN se tienen los siguientes comandos para poder la generación de imágenes, en este caso, usando cajas delimitadoras como configuración espacial:
 ```
 sudo docker run --gpus=all -it --rm -v /mnt/e/Gligen:/workspace/glig your-env /bin/bash
 ```
 ```
-python gligen_inference.py
+python3 gligen_inference.py --prompt "descripción" --phrase "entidades" --location "localización"
 ```
-El primer comando, de manera similar como en para GALIP, configura el entorno de Docker basado en el Dockerfile respectivo en este repositorio. El segundo comando ejecuta el programa de python destinado a la inferencia (generación) de imágenes. Se uso la misma tarjeta gráfica como en el primer modelo, tomando alrededor de 3 minutos para la ejecución.
+El primer comando, de manera similar como en para GALIP, configura el entorno de Docker basado en el Dockerfile respectivo en este repositorio. El segundo comando ejecuta el programa de python destinado a la inferencia (generación) de imágenes basandose en la descripción de texto, además de las entidades en esta descripción con sus respectivas localizaciones. Se uso la misma tarjeta gráfica como en el primer modelo, tomando alrededor de 1 minuto para la ejecución.
 
 ### Procesamiento de datos
 
