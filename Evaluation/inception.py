@@ -60,9 +60,6 @@ def load_images_from_folder(folder):
     return images
 
 if __name__ == "__main__":
-    #parser = argparse.ArgumentParser(description="Calculate Inception Score for a folder of images")
-    #parser.add_argument("folder", type=str, help="Path to the folder containing images")
-    #args = parser.parse_args()
 
     # Load images from the specified folder
     images = load_images_from_folder("generation_original")
