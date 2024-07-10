@@ -49,3 +49,9 @@ PyTorch cuenta con una implementación para esta métrica, la cual será usada p
 ```sh
   pip install pytorch-fid
 ```
+
+### Métrica de evaluación (IS)
+
+El Inception Score (IS) es una métrica utilizada para evaluar la calidad de las imágenes generadas. Valora cuán realistas y diversas son las imágenes utilizando un modelo preentrenado Inception v3. El IS considera tanto la confianza del modelo en sus predicciones como la diversidad de las clases predichas. Para calcular el IS de las imágenes generadas en este proyecto, utilizamos un script (inception.py) que procesa las imágenes a través del modelo Inception v3 y calcula la puntuación basada en la entropía de las distribuciones de clases predichas.
+
+La puntuación IS para las imágenes generadas se calcula utilizando la función inception_score en el script proporcionado.
