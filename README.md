@@ -14,7 +14,7 @@ sudo docker run --gpus=all -it -v $(pwd):/app your-env
 ```
 python generate.py
 ```
-El primer comando inicializa en entorno de Docker y el segundo se utiliza para realizar la evaluación de los modelos en las métricas de FID y CLIP. Este proceso duró alrededor de 40 minutos usando una tarjeta gráfica NVIDIA RTX 3090.
+El primer comando inicializa en entorno de Docker y el segundo se utiliza para generar imágenes.
 
 Para la ejecución del modelo de GLIGEN se tienen los siguientes comandos para poder la generación de imágenes, en este caso, usando cajas delimitadoras como configuración espacial:
 ```
